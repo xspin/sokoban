@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title> sokoban </title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="author" content="eSpin" />
+		<meta name="description" content="Sokoban Game" />
+        <link rel="shortcut icon" href="img/2.png" href="img/5.png" />
+        <link href="style/main.css" rel="stylesheet" type="text/css" />
+        <link href="style/button.css" rel="stylesheet" type="text/css" />
+        <!--<script>if (document.all) { alert("不支持IE浏览器！！！");} </script>-->
+	</head>
+
+	<body>
+        <!--<h2>推箱子</h2>-->
+        <div id="gameBox">
+            <!--<div id="start" class="button button-rounded button-royal" onclick='jump(1)'> 开始/结束</div>-->
+            <input id="start" type="button" value="开始／结束" class="button button-rounded button-royal" onclick='jump(1)' />
+            <div id="panel">
+                <!--<p align="center" style="color:blue"> 推箱子 </p>-->
+                <img src="img/2.png" alt="^.^" />
+                <form id="stageSet" action="" method="get">
+                    <h3 class="heading">关卡设置</h3>
+                    <p>关卡号:1~103</p>
+                    <input id="stage" type="text" value="1" size="2" maxlength="3" onkeypress=" if(event.keyCode==13) {jump(); return false;}"/>
+                    <input class="button button-rounded button-flat-primary" type="button" value="确定/重来" style="width:100px;height:30px" onclick="jump()" />
+                    <!--<div class="button button-rounded button-flat-primary" style="width:60px;height:25px;font-size:12px;" onclick="jump()" >确定/重来 </div>-->
+                    <input type="button" value="←Prev" onclick='jump("previous")' />
+                    <input type="button" value="Next→" onclick='jump("next")' />
+                </form>
+                <div id="steps"></div>
+                <div id="tip">
+                    <h3 class="heading">说明</h3>
+                    <ul>
+                        <li>R－重新开始</li>
+                        <li>P－上一关</li>
+                        <li>N－下一关</li>
+                        <li>M－随机一关</li>
+                        <li>方向键－移动</li>
+                    </ul>
+                </div>
+                <img src="img/eg_cute.gif" alt="^_^" />
+            </div>
+            <div id="pass" onclick='jump("next")'>
+                <img src="img/pass.png" width="150px"/>
+                <h1>恭喜过关！</h1>
+                <h2>点击继续下一关</h2>
+            </div>
+        </div>
+<script src="js/data.js"></script>
+<script src="js/create.js"></script>
+<script src="js/operate.js"></script>
+<script src="js/main.js"></script>
+<script>
+</script>
+	</body>
+</html>
